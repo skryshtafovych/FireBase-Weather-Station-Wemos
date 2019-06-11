@@ -167,10 +167,10 @@ void loop() {
   /* show start screen */
   display.clear();
   display.setFont(ArialMT_Plain_16);
-  display.drawString(0, 0, "Temperature: 72°");
-  display.drawString(0, 16, "Humidity: 32%");
+  display.drawString(0, 0, "Temp-");
+  display.drawString(0, 16, "Humidity");
   display.setFont(ArialMT_Plain_10);
-  display.drawString(0, 40, "upTimer");
+  display.drawString(0, 40, "temp");
   display.drawString(0, 50, (String)timeDude);
   display.display();
 
