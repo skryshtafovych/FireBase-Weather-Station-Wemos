@@ -34,19 +34,13 @@
 */
 #include <ESP8266WiFi.h>
 #include <FirebaseArduino.h>
-#include "secrets.h"
+#include "secretValues.h"
 #include <Adafruit_Sensor.h>
 #include <DHT.h>
 #include <DHT_U.h>
 
 
-#include "SSD1306.h"
-#include "SH1106.h"
-
-
-
-
-#define DHTPIN 4     // Digital pin connected to the DHT sensor
+#define DHTPIN 4     // Digital pin connected to the DHT sensor 
 #define DHTTYPE    DHT11     // DHT 11
 DHT_Unified dht(DHTPIN, DHTTYPE);
 uint32_t delayMS;
@@ -138,21 +132,6 @@ void loop() {
     Serial.println(Firebase.getString("hallSensorGarageH"));
 
   }
-
-
-
-
-  //draw display
-display.clear();
-display.drawLine(minRow, Line, maxRow, Line);
-display.setTextAlignment(TEXT_ALIGN_LEFT);
-display.drawString(Row1, LineText, "Ch:"+event.relative_humidity);
-display.drawString(Row3, LineText, "Pkts:");
-display.drawString(Row5, LineText, "DA:");
-display.setTextAlignment(TEXT_ALIGN_RIGHT);
-display.drawString(Row2, LineText, (String)curChannel);
-display.drawString(Row4, LineText, (String)no_deauths);
-display.drawString(Row6, LineText, (String)deauths);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
